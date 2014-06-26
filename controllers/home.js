@@ -22,9 +22,20 @@ exports.linkgen = function(req, res, next) {
 
 
 exports.linkread = function(req,res) {
+  console.log(store);
   var id = req.params.id;
-  res.render('secret',{
-    secret: store[id]
-  });
+  var secretText = store[id];
+  if (secretText==undefined) {
+    res.render('secret',{
+      error: "Invalid URL, either it has been accessed already or it never existed!"
+    });
+  }
+  else {
+    res.render('secret',{
+      secret: store[id]
+    });
+    delete store[id];
+    console.log(store);
+  }
 };
 
