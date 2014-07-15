@@ -90,6 +90,11 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(function(req, res, next) {
+  // Make tempa object available in templates.
+  res.locals.tempa = req.tempa;
+  next();
+});
+app.use(function(req, res, next) {
   // Remember original destination before login.
   var path = req.path.split('/')[1];
   if (/auth|login|logout|signup|img|fonts|favicon/i.test(path)) {
@@ -106,7 +111,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
 app.get('/', homeController.index);
 app.post('/', homeController.linkgen);
-app.get('/:id', homeController.linkread);
+app.get('/tempalink/:id', homeController.linkread);
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

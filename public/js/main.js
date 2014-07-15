@@ -17,13 +17,17 @@ $(document).ready(function() {
 								.hide();
 							$('#Generate').hide();
 							$('.secretlink').show();
-							$('#secreta').html(url + "/" +data.response)
-								.attr('href', url + "/" +data.response);
-
-							
+							$('#secreta').html(url + "/tempalink/" +data.response)
+								.attr('href', url + "/tempalink/" +data.response);
 						}
 					
 				},'json');
+			});
+  $('#Save').click(function(event)
+			{
+				var url = "http://localhost:3000/save";
+				$.post(url,function(data){});
+				
 			});
 
 });
