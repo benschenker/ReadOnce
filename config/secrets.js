@@ -18,9 +18,6 @@
 
 module.exports = {
 
-//  db: process.env.MONGODB|| 'mongodb://localhost:27017/test',
-
-//  db: 'mongodb://CrazyReader:m1PEMUnlzwipiB@ds041198.mongolab.com:41198/readoncedb',
   db: process.env.ReadOnce_MONGODB,
 
   sessionSecret: process.env.ReadOnce_SESSION_SECRET || 'Your Session Secret goes here',
