@@ -60,7 +60,7 @@ var week = day * 7;
  * Express configuration.
  */
 
-app.set('port', process.env.DEV_PORT || 3000);
+app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
