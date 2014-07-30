@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $('#Generate').click(function(event)
 			{
-				var url = "http://localhost:3000";
+				var url = "http://readonce.herokuapp.com";
 				var secretPayload = {};
 				secretPayload['secret'] = $('#input').val();
 				console.log(secretPayload);
