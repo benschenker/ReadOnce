@@ -23,19 +23,15 @@ exports.linkgen = function(req, res, next) {
 
 	tempa.save(function(err) {
 		if (err) return next(err);
-		res.send({"success":true,"errors":[],"response": id});
+		res.render('link', {
+			id:id
+		});
 	});
 	console.log(id+ ": " + tempa.SECRET);
-	
 };
 
 
 exports.linkread = function(req,res) {
-/*	
-	Tempa.find(function(err,tempas){
-		console.log("tempas: " + tempas);
-	});
-*/
 	var id = req.params.id;
 	var secretText = Tempa.findOne({ID:id}, function(err,tempa){
 		if(tempa){
