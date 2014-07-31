@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  h1 ReadOnce
   p.lead Paste text below and generate a link that will self destruct after it is accessed once.
     div#inputarea
       code(class='secretlink', style='display:none; width:500px')
@@ -9,5 +8,3 @@ block content
       textarea#input
   br
   button#Generate Generate Link
-  br
-  button#Save Save
